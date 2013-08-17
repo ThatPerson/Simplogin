@@ -22,7 +22,7 @@ $simplogin = new Simplogin('localhost', 'root', 'root', 'database', 'SHA512', 'm
     $simplogin->check('username', 'password');
     $simplogin->check($_POST['username'], $_POST['password']);
 */
-
+$simplogin->create("username", "password");
 // Just use an if statement to check if the credentials are valid
 if ($simplogin->check('username', 'password') == true)
 {

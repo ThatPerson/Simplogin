@@ -49,4 +49,22 @@ class Simplogin {
            return false;
         }
     }
+    function create($username = false, $password = false) {
+        $username = $this->db->real_escape_string($username);
+	$password = $this->db->real_escape_string($password);
+	$password = hash($this->hash, $this->salt.$password);
+	// Basically the same as check, only it only checks for the username.
+	$query = $this->db->query("
+					SELECT id
+					FROM users
+					WHERE username = '".$username."'
+				");
+	if ($query->num_rows > 0) {
+		return false;
+	} else {
+		$query = "INSERT INTO users (username, password, last_ip, last_login) values ('".$username."', '".$password."', '".$this->ip."', '".$this->time."')";
+		$this->db->query($query);
+		return true;
+	}
+    }	
 }

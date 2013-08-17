@@ -23,13 +23,15 @@ Now that you've initialized the class, you'll have to import the SQL. The SQL co
     -- 
     
     DROP TABLE IF EXISTS `users`;
-    CREATE TABLE IF NOT EXISTS `users` (
-      `id` int(12) NOT NULL,
-      `username` varchar(255) NOT NULL,
-      `password` varchar(128) NOT NULL,
-      `last_ip` varchar(15) NOT NULL,
-      `last_login` int(10) NOT NULL
-    ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+    DROP TABLE IF EXISTS `users`;
+		CREATE TABLE IF NOT EXISTS `users` (
+		`id` int(12) NOT NULL AUTO_INCREMENT,
+		`username` varchar(255) NOT NULL,
+		`password` varchar(128) NOT NULL,
+		`last_ip` varchar(15) NOT NULL,
+		`last_login` int(10) NOT NULL,
+		PRIMARY KEY (`id`)
+	) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
     
     -- 
     -- Data for table `users`
