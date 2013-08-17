@@ -4,6 +4,9 @@
     
     By Giovanni Kosman
     www.kreativeweb.nl
+    
+    Modified by Ben Tatman
+    http://www.bentatman.co.uk
 */
 
 // Load the class
